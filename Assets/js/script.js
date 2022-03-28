@@ -2,7 +2,10 @@ console.log(moment().format());
 
 $(document).ready(function() {});
 
+let currentDate = moment().format("MMMM Do, YYYY - hh:mm:ss a");
+console.log(currentDay);
 
+$("#currentDay").text(currentDate);
 
 
 
