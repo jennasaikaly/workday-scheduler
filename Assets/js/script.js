@@ -1,28 +1,22 @@
 console.log(moment().format());
 
-$(document).ready(function() {});
-
+//$(document).ready(function() {});
+//Today's date displayed at the top of the page
 let currentDate = moment().format("MMMM Do, YYYY - hh:mm:ss a");
-console.log(currentDay);
+$("#currentDate").text(currentDate);
 
-$("#currentDay").text(currentDate);
+//this is today's date
+let currentTime = moment().format("HH:mm");
+console.log(currentTime);
 
 
+ 
 
 
-$(".time-div").on("click", "p", function() {
-    var text = $(this)
-      .text()
-      .trim();
-    console.log(text);
+//Saves the task description and 
+$(".saveBtn").on("click", function() {
+  let text = $(this).siblings(".description").val();
+  let time = $(this).closest(".time-div").attr("id");
 
-  //creates dynamic element
-//replaces p with textarea
-  var textInput = $("<textarea>")
-  .addClass("list-control");
-
-  $(this).replaceWith(textInput);
-  //highlights the input box
-  textInput.trigger("focus");
-
-});
+  localStorage.setItem(text, time);
+})
