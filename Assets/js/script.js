@@ -7,12 +7,10 @@ let currentDateEl = document.querySelector("#currentDate");
 let today = moment().format("MMMM Do, YYYY - hh:mm:ss a");
 currentDateEl.innerHTML = today; 
 
-//this is current time
-let currentTime = moment().format("HH:mm");
+
 
 //load task function
 let loadTasks = function (){
-  debugger;
  let storedTask9 = localStorage.getItem("9");
  descriptionEl.textContent = storedTask9;
  let storedTask10 = localStorage.getItem("10");
@@ -46,12 +44,24 @@ $(".saveBtn").click(function(event) {
  localStorage.setItem(taskTime,taskText);
 })  
 
-//var auditTasks = function (){
-
-  //for (let i = 0; i < descriptionEl; i++)
-  //var timeBlock = descriptionEl[i].
-  // if(currentHour = descriptionEl) {
-
-  // }
-   
-//}
+var auditTasks = function (){
+  //debugger;
+ const description = document.querySelectorAll(".description");
+ const count = description.length;
+ //this is current time
+//let currentTime = moment().format("HH:mm");
+currentTime = 12;
+convertedTime = parseInt(currentTime, 10);
+//console.log(convertedTime);
+const timeBlock = document.querySelector(".description").parentElement.id;
+  for (let i = 0; i < count; i++){
+    if (timeBlock === convertedTime) {
+      descriptionEl.className = "col-md-10 time-block description present"
+    } else if (timeBlock > convertedTime) {
+      descriptionEl.className = "col-md-10 time-block description future"
+    } else if (timeBlock < convertedTime) {
+      descriptionEl.className = "col-md-10 time-block description past"
+    }
+}
+}
+auditTasks();
