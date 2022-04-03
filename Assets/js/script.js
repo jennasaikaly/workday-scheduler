@@ -1,4 +1,4 @@
-console.log(moment().format());
+//console.log(moment().format());
 
 let descriptionEl = document.querySelector(".description");
 let currentDateEl = document.querySelector("#currentDate");
@@ -12,13 +12,13 @@ var auditTasks = function (){
  const description = document.querySelectorAll(".description");
  const count = description.length;
  //this is current time
-//let currentTime = moment().format("HH:mm");
-currentTime = 9;
+let currentTime = moment().format("HH:mm");
+//currentTime = 9;
 convertedTime = parseInt(currentTime, 10);
 
 const timeBlock = document.querySelector(".description").parentElement.id;
-console.log(convertedTime);
-console.log(timeBlock);
+//console.log(convertedTime);
+//console.log(timeBlock);
   for (let i = 0; i < count; i++){
     if (convertedTime ===timeBlock) {
       descriptionEl.className = "col-md-10 time-block description present"
