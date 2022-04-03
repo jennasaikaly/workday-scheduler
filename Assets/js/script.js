@@ -1,38 +1,38 @@
+console.log(moment().format());
 
-
-
+let descriptionEl = document.querySelector(".description");
+let currentDateEl = document.querySelector("#currentDate");
 
 //Today's date displayed at the top of the page
-let currentDate = moment().format("MMMM Do, YYYY - hh:mm:ss a");
-$("#currentDate").text(currentDate);
+let today = moment().format("MMMM Do, YYYY - hh:mm:ss a");
+currentDateEl.innerHTML = today; 
 
-//this is today's date
+//this is current time
 let currentTime = moment().format("HH:mm");
-console.log(currentTime);
-
 
 //load task function
 let loadTasks = function (){
-tasks = JSON.parse(localStorage.getItem("tasks"));
-
-//if there is nothing in localStorage, create a new object to task the tasks
-if (!tasks) {
-  tasks = {};
-  };
-
-  for(let i=0; i<localStorage.length; i++) {
-    let tasks = localStorage.tasks(i);
-    alert(`${tasks}: ${localStorage.getItem(tasks)}`);
-    console.log(tasks)
-  }
-  displayTasks(tasks);
-
+  debugger;
+ let storedTask9 = localStorage.getItem("9");
+ descriptionEl.textContent = storedTask9;
+ let storedTask10 = localStorage.getItem("10");
+ descriptionEl.textContent = storedTask10;
+ let storedTask11 = localStorage.getItem("11");
+ descriptionEl.textContent = storedTask11;
+ let storedTask12 = localStorage.getItem("12");
+ descriptionEl.textContent = storedTask12;
+ let storedTask13 = localStorage.getItem("13");
+ descriptionEl.textContent = storedTask13;
+ let storedTask14 = localStorage.getItem("14");
+ descriptionEl.textContent = storedTask14;
+ let storedTask15 = localStorage.getItem("15");
+ descriptionEl.textContent = storedTask15;
+ let storedTask16 = localStorage.getItem("16");
+ descriptionEl.textContent = storedTask16;
+ let storedTask17 = localStorage.getItem("17");
+ descriptionEl.textContent = storedTask17;
 }
-
-//displayTasks(tasks){
-
- // $.each(tasks)
-//}
+loadTasks();
 
 
 //Saves the task description and time when the user clicks the 'save' button
@@ -43,10 +43,15 @@ $(".saveBtn").click(function(event) {
  var taskText= $(this).siblings(".description").val();
  var taskTime= $(this).parent().attr("id");
 
- localStorage.setItem(taskText, taskTime);
-
- 
-  
-  
+ localStorage.setItem(taskTime,taskText);
 })  
 
+//var auditTasks = function (){
+
+  //for (let i = 0; i < descriptionEl; i++)
+  //var timeBlock = descriptionEl[i].
+  // if(currentHour = descriptionEl) {
+
+  // }
+   
+//}
